@@ -34,7 +34,7 @@
 - Implemented image augmentation techniques to counteract class imbalance within the dataset of 11,000 images. This approach helped ensure the model generalizes well to unseen data, contributing to its high accuracy
 - Created a custom image data generator to streamline the training process. This optimized data loading and preprocessing, leading to faster training times and improved model performance
 
-<div style="text-align:center"><img src="/assets/W2.png" width="400" height="200"></div>
+<div style="text-align:center"><img src="/W2.png" width="400" height="200"></div>
 
 <br/>
 
@@ -45,7 +45,7 @@
 - Album covers were fetched using the Spotify API and integrated into the recommendations. A user-friendly interface was developed using Streamlit to display recommended songs with their corresponding album art.
 - The system employs a content-based filtering approach, recommending songs similar to the user's previously listened tracks or preferred genres, without requiring explicit user ratings or behavior data.
 
-<div style="text-align:center"><img src="/assets/M11.png" width="400" height="200"></div>
+<div style="text-align:center"><img src="/M11.png" width="400" height="200"></div>
 
 <br/>
 
@@ -73,7 +73,7 @@
 - Data Analysis of the world's largest cricket league dataset comprising 17 years of data with over 260,000 samples and 18 features
 - Precise and statistically sound figures for accurate data-driven analysis
 
-<div style="text-align:center"><img src="/assets/W1.png" width="200" height="200"></div>
+<div style="text-align:center"><img src="/W1.png" width="200" height="200"></div>
 
 ## Publications
 1. Bafna, Mehul. Mathematical Aspects and Challenges of the Algorand Blockchain. MS thesis. 2022. <br/>
