@@ -76,5 +76,9 @@
 <div style="text-align:center"><img src="/W1.png" width="200" height="200"></div>
 
 ## Publications
-1. Bafna, Mehul. Mathematical Aspects and Challenges of the Algorand Blockchain. MS thesis. 2022. <br/>
+1. Bafna, Mehul et al. Automated Segmentation of Hepatic Vessels and Lobules in Whole-Slide Images Using U-Net Models. 2025. <br/>
+[URL](https://doi.org/10.1101/2025.09.08.674181)
+2. Bafna, Mehul et al. Computation of Graph Polynomials via Tree Decomposition: Theory, Algorithms, and Python Implementation. 2025. <br/>
+[URL](https://arxiv.org/abs/2509.16816)
+3. Bafna, Mehul. Mathematical Aspects and Challenges of the Algorand Blockchain. MS thesis. 2022. <br/>
 [URL](https://monami.hs-mittweida.de/frontdoor/deliver/index/docId/14083/file/MT_51923_Bafna_Mehul_Algorand_geschwaerzt.pdf)
