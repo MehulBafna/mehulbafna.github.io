@@ -475,6 +475,30 @@
             font-weight: bold;
         }
 
+        .work-footnotes {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #ddd;
+            list-style: none;
+        }
+
+        .work-footnotes li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.3rem;
+            color: #aaa;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .work-footnotes li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #bbb;
+            font-weight: bold;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -920,9 +944,11 @@
                 <ul class="work-achievements">
                     <li>Built dual U-Net deep learning pipeline for hepatic vessel and lobule segmentation in whole-slide histological images, achieving 96.0% Dice score for lobules and 78.7% mean Dice across vascular structures through weight-boosted nnU-Net architecture. Integrated morphometric analysis (diameter, area, aspect ratio) to enable quantitative structural assessment of 1400+ liver structures</li>
                     <li>Developed and operationalized Random Forest model for 30-day patient readmission risk prediction (AUC-ROC: 0.88), implementing CI/CD pipeline and MLOps practices to facilitate targeted interventions and improve patient outcomes</li>
-                    <li>Engineered text summarization pipeline using BART Transformers for medical literature analysis. Processed 500+ research papers and reducing key findings extraction time by 25% through fine-tuned abstractive summarization </li>
-<li>Implemented work time record management system using VBA Excel macros for date entry, time calculations, and overtime tracking, resulting in 25% improvement in data entry efficiency </li>
-<li>Designed Python automation tool with Flask for end-to-end certificate generation, data population, PDF conversion, and email delivery, achieving 30% reduction in manual processing time </li>
+                    <li>Built Claude API-powered Biomedical Literature Summarizer — a web application that processes research papers from PDF, PubMed ID, or text, retrieves up to 15 relevant papers via PubMed and Semantic Scholar, and exports structured summaries (key takeaways, methodology, results) as Excel reports, reducing literature review time by 40%</li>
+                </ul>
+                <ul class="work-footnotes">
+                    <li>Implemented work time record management system using VBA Excel macros for date entry, time calculations, and overtime tracking</li>
+                    <li>Designed Python automation tool with Flask for end-to-end certificate generation, data population, PDF conversion, and email delivery</li>
                 </ul>
             </div>
             <div class="work-item">
@@ -937,13 +963,12 @@
                     <li>Migrated legacy insurance data (98% successful mapping) to a modern MySQL-based application system, facilitating efficient data access and analysis</li>
                     <li>Designed a comprehensive database schema with 20 tables for efficient storage and retrieval of insurance data (location, policy type, liability information etc.)</li>
                     <li>Contributed to software testing by diagnosing technical issues within insurance software solutions, ensuring application reliability and functionality</li>
-
                 </ul>
             </div>
         </div>
     </section>
 
-<!-- Work Experience Section -->
+<!-- Academic Work Experience Section -->
     <section id="Awork" class="section animate-on-scroll">
         <h2 class="section-title">Academic Work Experience</h2>
         <div class="work-grid">
@@ -971,10 +996,9 @@
                 <ul class="work-achievements">
                     <li>Provided teaching tutorials for the 'Advanced Graph Theory and Network Algorithms' module, fostering student understanding of discrete mathematics concepts</li>
                     <li>Conducted independent research on algorithms for graph tree decompositions and domination/independence polynomials</li>
-
                 </ul>
             </div>
-<div class="work-item">
+            <div class="work-item">
                 <div class="work-header">
                     <div>
                         <h3 class="work-title">Research Assistant</h3>
@@ -983,12 +1007,11 @@
                     <span class="work-period">January 2019 - August 2019</span>
                 </div>
                 <ul class="work-achievements">
-                    <li>Analyzed 10 research papers in the areas of GIS, cartography and Geoinformatics to establish a strong foundation in the research areaUtilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
+                    <li>Analyzed 10 research papers in the areas of GIS, cartography and Geoinformatics to establish a strong foundation in the research area</li>
                     <li>Applied potential machine learning algorithms over geospatial datasets and evaluated the results for recommending and visualizing efficient routes</li>
-		    <li>Utilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
+                    <li>Utilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
@@ -997,63 +1020,8 @@
     <section id="projects" class="section animate-on-scroll">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3 class="project-title">Deep Learning for Skin Cancer Detection: A CNN Approach with Transfer Learning and Data Augmentation</h3>
-                    <p class="project-description">
-                        Built a Convolutional Neural Network (CNN) utilizing transfer learning with VGG19 for image classification with 7 labels. Implemented image augmentation techniques to counteract class imbalance within the dataset of 11,000 images.
-                    </p>
-                    <a href="https://github.com/MehulBafna/Computer-Vision/tree/main/Deep%20Learning%20-%20Skin%20Cancer%20Detection" class="project-link">
-                        View Project <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3 class="project-title">Content-Based Music Recommender System</h3>
-                    <p class="project-description">
-                        A Spotify dataset of over 70,000 songs was processed to extract relevant metadata (artist, track, album, genre). This data was then transformed into numerical representations using count vectorization to create feature vectors for each song. The system employs a content-based filtering approach, recommending songs similar to the user’s previously listened tracks or preferred genres, without requiring explicit user ratings or behavior data.
-                    </p>
-                    <a href="https://github.com/MehulBafna/Music-Recommender-System/tree/main" class="project-link">
-                        View Project <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="project-title">Principal Component Analysis (PCA)</h3>
-                    <p class="project-description">
-                        Developed a robust PCA program in Python to perform dimensionality reduction on large datasets. Implemented the computation of the variance-covariance matrix to understand the relationship between different features in the dataset. Developed algorithm to compute eigenvalues and eigenvectors, enabling the identification of principal components.
-Created plots to visualize the principal components and the explained variance, aiding in better data interpretation
-                    </p>
-                    <a href="https://github.com/MehulBafna/Principal-Component-Analysis" class="project-link">
-                        View Project <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 class="project-title">Indian Premier League (IPL) in-depth Data Analysis</h3>
-                    <p class="project-description">
-Data Analysis of the world’s largest cricket league dataset comprising 17 years of data with over 260,000 samples and 18 features. Precise and statistically sound figures for accurate data-driven analysis
-                    </p>
-                    <a href="https://github.com/MehulBafna/Indian-Premier-League-in-depth-data-analysis-" class="project-link">
-                        View Project <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+
+            <!-- 1. Biomedical Literature Summarizer -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1068,6 +1036,8 @@ Data Analysis of the world’s largest cricket league dataset comprising 17 year
                     </a>
                 </div>
             </div>
+
+            <!-- 2. Smart Portfolio Manager AI -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1075,13 +1045,62 @@ Data Analysis of the world’s largest cricket league dataset comprising 17 year
                     </div>
                     <h3 class="project-title">Smart Portfolio Manager AI — Indian Stock Market Intelligence</h3>
                     <p class="project-description">
-						AI-powered portfolio intelligence system for NSE-listed Indian stocks using multi-source RAG architecture. Combines live price data, Screener.in fundamentals, news sentiment, and RBI macro indicators with intelligent query routing. LLM generates structured Buy/Hold/Sell signals with target prices and risk levels. Features a Streamlit dashboard, AI chat interface, Nifty 500 stock discovery engine, and automated daily refresh pipeline via Qdrant and Prefect.
+                        AI-powered portfolio intelligence system for NSE-listed Indian stocks using multi-source RAG architecture. Combines live price data, Screener.in fundamentals, news sentiment, and RBI macro indicators with intelligent query routing. LLM generates structured Buy/Hold/Sell signals with target prices and risk levels. Features a Streamlit dashboard, AI chat interface, Nifty 500 stock discovery engine, and automated daily refresh pipeline via Qdrant and Prefect.
                     </p>
                     <a href="https://github.com/mehulbafna/smart-portfolio-manager-ai" class="project-link">
                         View Project <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
             </div>
+
+            <!-- 3. Skin Cancer CNN -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="project-title">Deep Learning for Skin Cancer Detection: A CNN Approach with Transfer Learning and Data Augmentation</h3>
+                    <p class="project-description">
+                        Built a Convolutional Neural Network (CNN) utilizing transfer learning with VGG19 for image classification with 7 labels. Implemented image augmentation techniques to counteract class imbalance within the dataset of 11,000 images.
+                    </p>
+                    <a href="https://github.com/MehulBafna/Computer-Vision/tree/main/Deep%20Learning%20-%20Skin%20Cancer%20Detection" class="project-link">
+                        View Project <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Music Recommender -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="project-title">Content-Based Music Recommender System</h3>
+                    <p class="project-description">
+                        A Spotify dataset of over 70,000 songs was processed to extract relevant metadata (artist, track, album, genre). This data was then transformed into numerical representations using count vectorization to create feature vectors for each song. The system employs a content-based filtering approach, recommending songs similar to the user's previously listened tracks or preferred genres, without requiring explicit user ratings or behavior data.
+                    </p>
+                    <a href="https://github.com/MehulBafna/Music-Recommender-System/tree/main" class="project-link">
+                        View Project <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. IPL Data Analysis -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="project-title">Indian Premier League (IPL) in-depth Data Analysis</h3>
+                    <p class="project-description">
+                        Data Analysis of the world's largest cricket league dataset comprising 17 years of data with over 260,000 samples and 18 features. Precise and statistically sound figures for accurate data-driven analysis.
+                    </p>
+                    <a href="https://github.com/MehulBafna/Indian-Premier-League-in-depth-data-analysis-" class="project-link">
+                        View Project <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1103,7 +1122,7 @@ Data Analysis of the world’s largest cricket league dataset comprising 17 year
                 </p>
                 <a href="https://arxiv.org/abs/2509.16816" class="publication-link">Read Publication</a>
             </div>
- 	    <div class="publication-item">
+            <div class="publication-item">
                 <h3 class="publication-title">Bafna, Mehul. Mathematical Aspects and Challenges of the Algorand Blockchain. MS thesis</h3>
                 <p class="publication-details">
                     2022
