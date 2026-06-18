@@ -475,6 +475,30 @@
             font-weight: bold;
         }
 
+        .work-footnotes {
+            margin-top: 1rem;
+            padding-top: 0.75rem;
+            border-top: 1px dashed #ddd;
+            list-style: none;
+        }
+
+        .work-footnotes li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.3rem;
+            color: #aaa;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .work-footnotes li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #bbb;
+            font-weight: bold;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -939,13 +963,12 @@
                     <li>Migrated legacy insurance data (98% successful mapping) to a modern MySQL-based application system, facilitating efficient data access and analysis</li>
                     <li>Designed a comprehensive database schema with 20 tables for efficient storage and retrieval of insurance data (location, policy type, liability information etc.)</li>
                     <li>Contributed to software testing by diagnosing technical issues within insurance software solutions, ensuring application reliability and functionality</li>
-
                 </ul>
             </div>
         </div>
     </section>
 
-<!-- Work Experience Section -->
+<!-- Academic Work Experience Section -->
     <section id="Awork" class="section animate-on-scroll">
         <h2 class="section-title">Academic Work Experience</h2>
         <div class="work-grid">
@@ -973,10 +996,9 @@
                 <ul class="work-achievements">
                     <li>Provided teaching tutorials for the 'Advanced Graph Theory and Network Algorithms' module, fostering student understanding of discrete mathematics concepts</li>
                     <li>Conducted independent research on algorithms for graph tree decompositions and domination/independence polynomials</li>
-
                 </ul>
             </div>
-<div class="work-item">
+            <div class="work-item">
                 <div class="work-header">
                     <div>
                         <h3 class="work-title">Research Assistant</h3>
@@ -985,38 +1007,21 @@
                     <span class="work-period">January 2019 - August 2019</span>
                 </div>
                 <ul class="work-achievements">
-                    <li>Analyzed 10 research papers in the areas of GIS, cartography and Geoinformatics to establish a strong foundation in the research areaUtilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
+                    <li>Analyzed 10 research papers in the areas of GIS, cartography and Geoinformatics to establish a strong foundation in the research area</li>
                     <li>Applied potential machine learning algorithms over geospatial datasets and evaluated the results for recommending and visualizing efficient routes</li>
-		    <li>Utilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
+                    <li>Utilized Python modules for Exploratory Data Analysis (EDA) and visualization to facilitate data understanding</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
 
-        <!-- Projects Section -->
+    <!-- Projects Section -->
     <section id="projects" class="section animate-on-scroll">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
 
-            <!-- 1. EnergyPulse MLOps -->
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="project-title">EnergyPulse - German Electricity Demand Forecasting MLOps Pipeline</h3>
-                    <p class="project-description">
-                        Production-grade MLOps system forecasting hourly German electricity consumption using real ENTSO-E grid data. LightGBM model with 35 engineered features (lag, rolling stats, German holidays, cyclical encoding) trained via time-series cross-validation. Full pipeline: automated drift detection (PSI-based), self-triggered retraining, FastAPI prediction endpoint, MLflow experiment tracking, DVC data versioning, Docker containerisation, and GitHub Actions CI/CD with rolling deployment.
-                    </p>
-                    <a href="https://github.com/MehulBafna/Germany-energy-demand-forecasting-mlops" class="project-link">
-                        View Project <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 2. Biomedical Literature Summarizer -->
+            <!-- 1. Biomedical Literature Summarizer -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1032,7 +1037,7 @@
                 </div>
             </div>
 
-            <!-- 3. Smart Portfolio Manager AI -->
+            <!-- 2. Smart Portfolio Manager AI -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1048,7 +1053,7 @@
                 </div>
             </div>
 
-            <!-- 4. Skin Cancer CNN -->
+            <!-- 3. Skin Cancer CNN -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1064,7 +1069,7 @@
                 </div>
             </div>
 
-            <!-- 5. Music Recommender -->
+            <!-- 4. Music Recommender -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1080,7 +1085,7 @@
                 </div>
             </div>
 
-            <!-- 6. IPL Data Analysis -->
+            <!-- 5. IPL Data Analysis -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-icon">
@@ -1117,7 +1122,7 @@
                 </p>
                 <a href="https://arxiv.org/abs/2509.16816" class="publication-link">Read Publication</a>
             </div>
- 	    <div class="publication-item">
+            <div class="publication-item">
                 <h3 class="publication-title">Bafna, Mehul. Mathematical Aspects and Challenges of the Algorand Blockchain. MS thesis</h3>
                 <p class="publication-details">
                     2022
@@ -1270,3 +1275,5 @@
     </script>
 </body>
 </html>
+
+
