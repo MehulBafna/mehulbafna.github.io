@@ -467,6 +467,69 @@
             font-weight: bold;
         }
 
+        /* Story-style experience (UKJ) */
+        .work-intro {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 75ch;
+        }
+
+        .work-chapter {
+            padding: 1.25rem 0;
+            border-top: 1px solid #eef0f6;
+        }
+
+        .work-chapter:last-child {
+            padding-bottom: 0;
+        }
+
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title i {
+            color: var(--primary-color);
+            width: 1.2rem;
+            text-align: center;
+        }
+
+        .work-chapter p {
+            color: var(--text-light);
+            max-width: 75ch;
+        }
+
+        .work-chapter p + p {
+            margin-top: 0.75rem;
+        }
+
+        .work-chapter strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .chapter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.85rem;
+        }
+
+        .chapter-tag {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -739,7 +802,7 @@
                 <h1>Hi, I'm <span class="highlight">Mehul Bafna</span></h1>
                 <p class="subtitle">Data Scientist & ML Engineer</p>
                 <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.1rem;">
-Building production-ready AI systems across the full ML lifecycle — from research and deep learning to LLM applications, MLOps pipelines, and cloud deployment. Currently applying cutting-edge ML to real-world clinical and financial problems, with published research and live deployed systems.                </p>
+Research Data scientist with four years of experience across the full ML workflow: curating datasets, training deep learning models on GPU clusters, validating results statistically, and deploying pipelines with MLflow, Docker, and CI/CD on AWS. My research at University Clinic Jena led to a first-author publication and the Michael Stifel Prize.               </p>
                 <a href="#contact" class="cta-button">Let's Connect</a>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/mehul-bafna-8b696488/" class="social-link">
@@ -853,17 +916,74 @@ Building production-ready AI systems across the full ML lifecycle — from resea
                         <h3 class="work-title">Research Data Scientist</h3>
                         <p class="university">University Clinic Jena, Germany</p>
                     </div>
-                    <span class="work-period">October 2022 - Present</span>
+                    <span class="work-period">October 2022 - September 2026</span>
                 </div>
-                <ul class="work-achievements">
-                    <li>Built dual U-Net deep learning pipeline for hepatic vessel and lobule segmentation in whole-slide histological images, achieving 96.0% Dice score for lobules and 78.7% mean Dice across vascular structures through weight-boosted nnU-Net architecture. Integrated morphometric analysis (diameter, area, aspect ratio) to enable quantitative structural assessment of 1400+ liver structures</li>
-                    <li>Developed and operationalized Random Forest model for 30-day patient readmission risk prediction (AUC-ROC: 0.88), implementing CI/CD pipeline and MLOps practices to facilitate targeted interventions and improve patient outcomes</li>
-                    <li>Built Claude API-powered Biomedical Literature Summarizer — a web application that processes research papers from PDF, PubMed ID, or text, retrieves up to 15 relevant papers via PubMed and Semantic Scholar, and exports structured summaries (key takeaways, methodology, results) as Excel reports, reducing literature review time by 40%</li>
-                </ul>
-                <ul class="work-footnotes">
-                    <li>Implemented work time record management system using VBA Excel macros for date entry, time calculations, and overtime tracking</li>
-                    <li>Designed Python automation tool with Flask for end-to-end certificate generation, data population, PDF conversion, and email delivery</li>
-                </ul>
+
+                <p class="work-intro">
+                    At University Clinic Jena I worked where pathology meets machine learning: turning gigapixel microscopy scans of liver tissue into reliable, quantitative data. What began as a single segmentation problem grew into a complete research pipeline, from building the dataset and training the models to measuring the biology in their predictions and sharing the tools openly. The segmentation work became my first-author paper in Frontiers in Bioinformatics.
+                </p>
+
+                <div class="work-chapter">
+                    <h4 class="chapter-title"><i class="fas fa-tags"></i>Building the ground truth</h4>
+                    <p>
+                        There was no labeled dataset to start from, so I built one. Following a defined annotation protocol, I hand-labeled <strong>more than 9,700 objects across five classes</strong>, creating the expert-reviewed ground truth behind both models. I then used OpenSlide to cut the high-resolution scans into <strong>about 14,800 patches</strong>, with patch sizes tailored to each task and paired with multi-class masks, and published the dataset on Zenodo so others can build on it.
+                    </p>
+                    <div class="chapter-tags">
+                        <span class="chapter-tag">Data annotation</span>
+                        <span class="chapter-tag">OpenSlide</span>
+                        <span class="chapter-tag">Zenodo</span>
+                    </div>
+                </div>
+
+                <div class="work-chapter">
+                    <h4 class="chapter-title"><i class="fas fa-microscope"></i>Teaching models to see in gigapixel images</h4>
+                    <p>
+                        A single slide can run to 6.5 gigapixels, and around 90% of its pixels are background, which makes small vessels easy for a model to overlook. I developed two custom U-Net models in PyTorch and designed an adaptive class-reweighting algorithm that combines Dice, focal and cross-entropy loss, lifting minority-class Dice by <strong>roughly 13%</strong> over the baseline. Training ran on NVIDIA A100 GPUs on an HPC cluster (Slurm) with data parallelism and mixed precision, tuned through grid search with cosine-annealing schedules and early stopping.
+                    </p>
+                    <p>
+                        The final models reach a Dice score of <strong>0.96 on large lobular structures</strong> and <strong>0.75–0.80 on small vascular ones</strong>, and they hold up under 5-fold cross-validation and on fully independent external test images, measured by Dice, IoU, recall and boundary distance. To run them on whole slides, I built an end-to-end inference pipeline that predicts tile by tile, then blends and stitches the results back together. The code is open on GitHub.
+                    </p>
+                    <div class="chapter-tags">
+                        <span class="chapter-tag">PyTorch</span>
+                        <span class="chapter-tag">U-Net</span>
+                        <span class="chapter-tag">NVIDIA A100</span>
+                        <span class="chapter-tag">Mixed precision</span>
+                    </div>
+                </div>
+
+                <div class="work-chapter">
+                    <h4 class="chapter-title"><i class="fas fa-ruler-combined"></i>From masks to measurements</h4>
+                    <p>
+                        Segmentation masks only become useful once they turn into numbers. I built an automated morphometric pipeline that cleans the predictions with morphological post-processing and size filtering to cut false positives, then extracts size, shape and density metrics for <strong>11,712 objects</strong>. To make sure tissue artifacts weren't skewing the results, I compared clean and affected regions with two-sample t-tests and found no significant effect on object density or size (p &gt; 0.05).
+                    </p>
+                    <div class="chapter-tags">
+                        <span class="chapter-tag">Morphometrics</span>
+                        <span class="chapter-tag">Hypothesis testing</span>
+                    </div>
+                </div>
+
+                <div class="work-chapter">
+                    <h4 class="chapter-title"><i class="fas fa-map"></i>Mapping tissue zones</h4>
+                    <p>
+                        Once the model knew where the vessels were, it could do the labeling for the next question. I used the predicted vessel positions to sort image tiles into three spatial zones automatically, with no manual annotation needed. From color deconvolution I engineered protein-expression and collagen features, trained a grid-search-tuned Random Forest, and benchmarked it against logistic regression and XGBoost on macro-F1. SHAP showed which features drove the predictions, and Kruskal–Wallis tests let me check for expression differences across zones.
+                    </p>
+                    <div class="chapter-tags">
+                        <span class="chapter-tag">Random Forest</span>
+                        <span class="chapter-tag">XGBoost</span>
+                        <span class="chapter-tag">SHAP</span>
+                    </div>
+                </div>
+
+                <div class="work-chapter">
+                    <h4 class="chapter-title"><i class="fas fa-book-open"></i>Faster literature review with LLMs</h4>
+                    <p>
+                        Research also means reading a lot of papers. I built a Claude API pipeline that turns a scientific paper, given as a PDF, free text or a PubMed ID, into a structured abstractive summary. Across <strong>more than 500 papers</strong> it cut the time spent extracting key findings by <strong>25%</strong>, and it's released openly for anyone to reuse.
+                    </p>
+                    <div class="chapter-tags">
+                        <span class="chapter-tag">Claude API</span>
+                        <span class="chapter-tag">LLMs</span>
+                    </div>
+                </div>
             </div>
             <div class="work-item">
                 <div class="work-header">
